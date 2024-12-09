@@ -30,6 +30,7 @@ struct ContentView: View {
 
                 switch selectedChart {
                 case .bar:
+                    // BarChartGroupedViewに変更するとグループ別に販売数が表示されます
                     BarChartView()
                 case .line:
                     LineChartView()

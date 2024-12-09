@@ -6,17 +6,24 @@
 //
 
 import SwiftUI
+import Charts
 
 struct Product: Identifiable {
     var id = UUID()
     let name: String
     let price: Double
     let color: Color
+}
 
-    static let products: [Product] = [
-        .init(name: "おにぎり", price: 150, color: .blue),
-        .init(name: "揚げパン", price: 230, color: .red),
-        .init(name: "サラダ", price: 375, color: .green),
-        .init(name: "春巻き", price: 80, color: .orange)
-    ]
+enum PriceType: String, Plottable {
+    case regular = "普段"
+    case discount = "割引"
+}
+
+struct ProductWithPriceType: Identifiable {
+    var id = UUID()
+    let name: String
+    let price: Double
+    let priceType: PriceType
+    let sold: Int
 }
